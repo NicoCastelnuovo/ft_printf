@@ -6,7 +6,7 @@
 #    By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/09 17:35:46 by ncasteln          #+#    #+#              #
-#    Updated: 2023/04/28 17:02:42 by ncasteln         ###   ########.fr        #
+#    Updated: 2023/04/29 12:21:16 by ncasteln         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ SRC = ft_printf.c \
 	print_string.c \
 	print_signed.c \
 	print_unsigned.c \
-	print_address.c \
+	print_hex.c \
 	get_digit_length.c \
-	ft_putlong.c
+	ft_putunsigned.c
 OBJS = $(SRC:.c=.o)
 CFLAGS = -Wall -Werror -Wextra -g
 

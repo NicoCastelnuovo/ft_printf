@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_address.c                                    :+:      :+:    :+:   */
+/*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:31:22 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/04/29 10:58:12 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/04/29 12:22:07 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,15 @@ static int	ft_putnbr_hex(unsigned long n, int uppercase)
 	return (len);
 }
 
-int	print_address(const char *type, va_list ap)
+int	print_hex(const char *type, va_list ap)
 {
 	void	*p;
-	int		len;
-
-	len = 0;
 
 	p = va_arg(ap, void *);
 	if (*type == 'x')
-	{
-		len = ft_putnbr_hex((unsigned int) p, 0);
-		return (len);
-	}
+		return (ft_putnbr_hex((unsigned int) p, 0));
 	if (*type == 'X')
-	{
-		len = ft_putnbr_hex((unsigned int) p, 1);
-		return (len);
-	}
+		return (ft_putnbr_hex((unsigned int) p, 1));
 	ft_putstr_fd("0x", 1);
 	return (ft_putnbr_hex((unsigned long) p, 0) + 2);
 }

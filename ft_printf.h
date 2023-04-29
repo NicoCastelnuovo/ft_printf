@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 18:13:38 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/04/28 17:02:44 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/04/29 12:20:34 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int		print_char(const char *type, va_list ap);
 int		print_string(va_list ap);
 int		print_signed(va_list ap);
 int		print_unsigned(va_list ap);
-int		print_address(const char *type, va_list ap);
+int		print_hex(const char *type, va_list ap);
 
 int		get_digit_length(long n);
 
-void	ft_putlong(long n);
+void	ft_putunsigned(unsigned int n);
 
-# endif
+#endif

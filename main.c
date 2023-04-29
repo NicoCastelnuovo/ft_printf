@@ -416,8 +416,41 @@ int main ()
 	// printf("PRINT() LEN %d\n", len);
 	// printf("FT_PRINT() LEN %d\n", len1);
 
-	ft_printf("ft(): %p^end^", 0);
-	ft_putchar_fd('\n', 0);
-	printf("or(): %p^end^", 0); // 7e8c49cc
+	// ft_printf("ft(): %p^end^", 0);
+	// ft_putchar_fd('\n', 0);
+	// printf("or(): %p^end^", 0); // 7e8c49cc
 
+
+	// ________________________________TESTS__________________________________
+	// ft_printf("PUTUNSIGNED\n");
+	// ft_putulong(1);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(-1); // prints the max unsigned int if the accepted arg is unsigned int
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(-2147483647 - 1);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(2147483647);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(-2147483648);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(2147483648);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(4294967295);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(-9223372036854775807 - 1);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(-9223372036854775808);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(9223372036854775807);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(9223372036854775808);
+	// ft_putchar_fd('\n', 1);
+	// ft_putulong(18446744073709551615);
+	// ft_putchar_fd('\n', 1);
+
+
+	int len1 = ft_printf("ft(): %d", -1234567);
+	int len2 = printf("or(): %d", -1234567);
+	printf("len ft(): %d", len1);
+	printf("len or(): %d", len2);
 }
