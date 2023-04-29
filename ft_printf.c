@@ -23,14 +23,12 @@ int	ft_printf(const char *s, ...)
 	{
 		if (*s != '%')
 		{
-			ft_putchar_fd(*s, 1);
+			ft_putchar_fd(*(s++), 1);
 			n_printed++;
-			s++;
 		}
 		else
 		{
-			s++;
-			n_printed += match_arg_type(s, ap);
+			n_printed += match_arg_type(++s, ap);
 			s++;
 		}
 	}
