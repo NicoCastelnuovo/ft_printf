@@ -6,13 +6,13 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 18:13:38 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 09:52:59 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:59:04 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 # include <stdarg.h>
 
 int		ft_printf(const char *s, ...);

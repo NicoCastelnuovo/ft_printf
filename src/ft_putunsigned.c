@@ -6,11 +6,11 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 16:04:16 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 09:53:19 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:58:16 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../ft_printf.h"
 
 void	ft_putunsigned(unsigned int n)
 {

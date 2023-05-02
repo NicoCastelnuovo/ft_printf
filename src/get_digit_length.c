@@ -6,11 +6,11 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:57:15 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 09:53:21 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:58:20 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../ft_printf.h"
 
 int	get_digit_length(long n)
 {

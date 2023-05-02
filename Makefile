@@ -6,7 +6,7 @@
 #    By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/09 17:35:46 by ncasteln          #+#    #+#              #
-#    Updated: 2023/05/02 09:56:05 by ncasteln         ###   ########.fr        #
+#    Updated: 2023/05/02 10:00:13 by ncasteln         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,6 @@ $(NAME): $(OBJS)
 
 %.o: %.c
 	cc -c $(CFLAGS) -o $@ $^
-	mkdir objs
-	mv $(OBJS)
 
 clean:
 	rm -f $(OBJS)

@@ -6,11 +6,11 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:23:22 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 09:53:23 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:00:24 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../ft_printf.h"
 
 int	match_arg_type(const char *type, va_list ap)
 {

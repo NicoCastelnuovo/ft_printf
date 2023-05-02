@@ -6,11 +6,11 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:49:09 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 09:53:32 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:58:28 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../ft_printf.h"
 
 int	print_signed(va_list ap)
 {
