@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:31:22 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 09:58:26 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:36:07 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static int	ft_putnbr_hex(unsigned long n, int uppercase)
 			ft_putchar_fd(n + 48, 1);
 		else
 		{
-			if (!uppercase)
-				ft_putchar_fd(n + 87, 1);
-			else
+			if (uppercase)
 				ft_putchar_fd(n + 55, 1);
+			else
+				ft_putchar_fd(n + 87, 1);
 		}
 		len++;
 	}

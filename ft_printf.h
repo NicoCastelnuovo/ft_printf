@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 18:13:38 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 09:59:04 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:10:26 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int		ft_printf(const char *s, ...);
 int		match_arg_type(const char *type, va_list ap);
-int		get_digit_length(long n);
+int		get_digit_len(long n);
 
 int		print_char(const char *type, va_list ap);
 int		print_string(va_list ap);

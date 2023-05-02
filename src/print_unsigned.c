@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 16:06:29 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 09:58:32 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:07:18 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ int	print_unsigned(va_list ap)
 
 	u = va_arg(ap, unsigned int);
 	ft_putunsigned(u);
-	return (get_digit_length(u));
+	return (get_digit_len(u));
 }
