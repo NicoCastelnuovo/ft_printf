@@ -6,27 +6,24 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 18:13:38 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/04/29 12:20:34 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:52:59 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "./libft/libft.h"
-# include <stdio.h>
+# include "../libft/libft.h"
 # include <stdarg.h>
 
 int		ft_printf(const char *s, ...);
 int		match_arg_type(const char *type, va_list ap);
+int		get_digit_length(long n);
 
 int		print_char(const char *type, va_list ap);
 int		print_string(va_list ap);
 int		print_signed(va_list ap);
 int		print_unsigned(va_list ap);
 int		print_hex(const char *type, va_list ap);
-
-int		get_digit_length(long n);
-
 void	ft_putunsigned(unsigned int n);
 
 #endif

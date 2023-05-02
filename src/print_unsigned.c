@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_digit_length.c                                 :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 15:57:15 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/04/29 12:17:38 by ncasteln         ###   ########.fr       */
+/*   Created: 2023/04/26 16:06:29 by ncasteln          #+#    #+#             */
+/*   Updated: 2023/05/02 09:53:38 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/ft_printf.h"
 
-int	get_digit_length(long n)
+int	print_unsigned(va_list ap)
 {
-	int	len;
+	unsigned int	u;
 
-	len = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-	{
-		len++;
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len);
+	u = va_arg(ap, unsigned int);
+	ft_putunsigned(u);
+	return (get_digit_length(u));
 }

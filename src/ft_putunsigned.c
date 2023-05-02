@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   match_arg_type.c                                   :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 17:23:22 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/04/29 12:21:10 by ncasteln         ###   ########.fr       */
+/*   Created: 2023/04/28 16:04:16 by ncasteln          #+#    #+#             */
+/*   Updated: 2023/05/02 09:53:19 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/ft_printf.h"
 
-int	match_arg_type(const char *type, va_list ap)
+void	ft_putunsigned(unsigned int n)
 {
-	if (ft_strchr("c%", *type))
-		return (print_char(type, ap));
-	else if (*type == 's')
-		return (print_string(ap));
-	else if (ft_strchr("di", *type))
-		return (print_signed(ap));
-	else if (*type == 'u')
-		return (print_unsigned(ap));
-	else if (ft_strchr("pxX", *type), *type)
-		return (print_hex(type, ap));
-	return (0);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', 1);
+		n = n * -1;
+	}
+	if (n >= 10)
+	{
+		ft_putunsigned(n / 10);
+		n = n % 10;
+	}
+	if (n < 10)
+		ft_putchar_fd(n + 48, 1);
 }

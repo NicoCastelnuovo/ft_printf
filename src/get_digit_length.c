@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
+/*   get_digit_length.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 16:04:16 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/04/29 12:04:32 by ncasteln         ###   ########.fr       */
+/*   Created: 2023/04/28 15:57:15 by ncasteln          #+#    #+#             */
+/*   Updated: 2023/05/02 09:53:21 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/ft_printf.h"
 
-void	ft_putunsigned(unsigned int n)
+int	get_digit_length(long n)
 {
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
-		ft_putchar_fd('-', 1);
-		n = n * -1;
+		len++;
+		n *= -1;
 	}
-	if (n >= 10)
+	while (n > 0)
 	{
-		ft_putunsigned(n / 10);
-		n = n % 10;
+		n = n / 10;
+		len++;
 	}
-	if (n < 10)
-		ft_putchar_fd(n + 48, 1);
+	return (len);
 }

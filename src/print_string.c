@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 17:44:27 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 08:45:54 by ncasteln         ###   ########.fr       */
+/*   Created: 2023/04/24 17:49:20 by ncasteln          #+#    #+#             */
+/*   Updated: 2023/05/02 09:53:36 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/ft_printf.h"
 
-int	print_char(const char *s, va_list ap)
+int	print_string(va_list ap)
 {
-	int		n_printed;
-	char	c;
+	char	*s;
 
-	n_printed = 0;
-	if (*s == '%')
+	s = va_arg(ap, char *);
+	if (!s)
 	{
-		ft_putchar_fd('%', 1);
-		n_printed++;
+		ft_putstr_fd("(null)", 1);
+		return (6);
 	}
-	else
-	{
-		c = va_arg(ap, int);
-		ft_putchar_fd(c, 1);
-		n_printed++;
-	}
-	return (n_printed);
+	ft_putstr_fd(s, 1);
+	return (ft_strlen(s));
 }
