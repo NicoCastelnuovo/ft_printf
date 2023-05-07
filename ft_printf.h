@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 18:13:38 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 10:56:46 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/07 13:19:23 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int		print_string(va_list ap);
 int		print_signed(va_list ap);
 int		print_unsigned(va_list ap);
 int		print_hex(const char *type, va_list ap);
-void	ft_putunsigned(unsigned int n);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/09 17:35:46 by ncasteln          #+#    #+#              #
-#    Updated: 2023/05/02 10:47:42 by ncasteln         ###   ########.fr        #
+#    Updated: 2023/05/07 13:41:34 by ncasteln         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ SRC = ft_printf.c \
 	print_signed.c \
 	print_unsigned.c \
 	print_hex.c \
-	get_digit_len.c \
-	ft_putunsigned.c
+	get_digit_len.c
 VPATH = src
 OBJS = $(SRC:.c=.o)
 CFLAGS = -Wall -Werror -Wextra
@@ -39,9 +38,9 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	make fclean -C ./libft
+	$(MAKE) fclean -C ./libft
 	rm -f $(NAME)
 
 re: fclean all
 
-PHONY: all clean fclean re main
+.PHONY: all clean fclean re
