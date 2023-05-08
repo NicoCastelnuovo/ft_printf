@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 09:31:04 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/08 09:58:14 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:38:02 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 static int	match_arg_type(const char *type, va_list ap)
 {
 	if (*type == '%' || *type == 'c')
-		return (print_char(*type, ap));
+		return (print_c(*type, ap));
 	else if (*type == 's')
-		return (print_string(ap));
+		return (print_s(ap));
 	if (*type == 'd' || *type == 'i')
-		return (print_signed(ap));
+		return (print_di(ap));
 	else if (*type == 'u')
-		return (print_unsigned(ap));
+		return (print_u(ap));
 	else if (*type == 'x' || *type == 'X')
-		return (print_hex(*type, ap));
+		return (print_x(*type, ap));
 	else if (*type == 'p')
-		return (print_address(ap));
+		return (print_p(ap));
 	return (0);
 }
 

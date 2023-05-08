@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_digit_len.c                                    :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 15:57:15 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/02 10:46:14 by ncasteln         ###   ########.fr       */
+/*   Created: 2023/04/24 17:44:27 by ncasteln          #+#    #+#             */
+/*   Updated: 2023/05/08 12:34:56 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
-int	get_digit_len(long n)
+int	print_c(char type, va_list ap)
 {
-	int	len;
+	if (type == '%')
+		ft_putchar_fd('%', 1);
+	else
+		ft_putchar_fd(va_arg(ap, int), 1);
+	return (1);
+}
 
-	len = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
+int	print_s(va_list ap)
+{
+	char	*s;
+
+	s = va_arg(ap, char *);
+	if (!s)
 	{
-		len++;
-		n *= -1;
+		ft_putstr_fd("(null)", 1);
+		return (6);
 	}
-	while (n > 0)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len);
+	ft_putstr_fd(s, 1);
+	return (ft_strlen(s));
 }

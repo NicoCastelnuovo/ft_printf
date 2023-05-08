@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_unsigned.c                                   :+:      :+:    :+:   */
+/*   get_digit_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 16:06:29 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/08 09:49:23 by ncasteln         ###   ########.fr       */
+/*   Created: 2023/04/28 15:57:15 by ncasteln          #+#    #+#             */
+/*   Updated: 2023/05/08 12:15:28 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
-static void	ft_putunsigned(unsigned int n)
+int	get_digit_len(long n)
 {
-	if (n >= 10)
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		ft_putunsigned(n / 10);
-		n = n % 10;
+		len++;
+		n *= -1;
 	}
-	if (n < 10)
-		ft_putchar_fd(n + 48, 1);
-}
-
-int	print_unsigned(va_list ap)
-{
-	unsigned int	u;
-
-	u = va_arg(ap, unsigned int);
-	ft_putunsigned(u);
-	return (get_digit_len(u));
+	while (n > 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }

@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+         #
+#    By: ncasteln <ncastelnstudent.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 15:52:36 by ncasteln          #+#    #+#              #
 #    Updated: 2023/04/26 16:22:41 by ncasteln         ###   ########.fr        #
@@ -30,28 +30,21 @@ FLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME) bonus
 
-# create archive & replace/add files - silently - write/update obj index
 $(NAME): $(OBJS)
-	@echo "Compiling libft.a - mandatory"
-	@ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 bonus: $(BONUS_OBJS)
-	@echo "Compiling libft.a - bonus"
-	@ar rcs $(NAME) $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
 
 %.o: %.c
-	@cc -c $(FLAGS) $< -o $@
+	cc -c $(FLAGS) $< -o $@
 
-# remove without care of permissions and without prompt confirmation
 clean:
-	@echo "Removing all .o files"
-	@rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	@echo "Removing libft.a"
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
-	@echo "Reset"
 
 .PHONY: all clean fclean re bonus
