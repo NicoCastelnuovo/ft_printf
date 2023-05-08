@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:31:22 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/08 09:39:36 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/08 09:57:37 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ static int	ft_putnbr_hex(unsigned long n, int uppercase)
 	return (len);
 }
 
-int	print_hex(const char *type, va_list ap)
+int	print_hex(char type, va_list ap)
 {
-	void	*p;
+	if (type == 'X')
+		return (ft_putnbr_hex(va_arg(ap, unsigned int), 1));
+	return (ft_putnbr_hex(va_arg(ap, unsigned int), 0));
+}
 
-	p = va_arg(ap, void *);
-	if (*type == 'x')
-		return (ft_putnbr_hex((unsigned int) p, 0));
-	if (*type == 'X')
-		return (ft_putnbr_hex((unsigned int) p, 1));
+int	print_address(va_list ap)
+{
 	ft_putstr_fd("0x", 1);
-	return (ft_putnbr_hex((unsigned long) p, 0) + 2);
+	return (ft_putnbr_hex((unsigned long) va_arg(ap, void *), 0) + 2);
 }

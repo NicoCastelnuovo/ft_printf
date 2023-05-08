@@ -6,14 +6,13 @@
 #    By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/09 17:35:46 by ncasteln          #+#    #+#              #
-#    Updated: 2023/05/08 09:41:57 by ncasteln         ###   ########.fr        #
+#    Updated: 2023/05/08 09:45:28 by ncasteln         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 LIBFT = ./libft/libft.a
 SRC = ft_printf.c \
-	match_arg_type.c \
 	print_char.c \
 	print_string.c \
 	print_signed.c \
