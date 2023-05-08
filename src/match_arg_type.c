@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:23:22 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/07 13:20:47 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/05/08 09:29:50 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	match_arg_type(const char *type, va_list ap)
 {
+	// if (*type == '%' || *type == 'c')
 	if (ft_strchr("c%", *type))
 		return (print_char(type, ap));
 	else if (*type == 's')
@@ -22,7 +23,7 @@ int	match_arg_type(const char *type, va_list ap)
 		return (print_signed(ap));
 	else if (*type == 'u')
 		return (print_unsigned(ap));
-	else if (ft_strchr("pxX", *type), *type)
+	else if (ft_strchr("pxX", *type))
 		return (print_hex(type, ap));
 	return (0);
 }

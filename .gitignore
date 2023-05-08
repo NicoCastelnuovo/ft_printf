@@ -1,0 +1,8 @@
+# .gitignore
+# *.o
+# *.a
+# main.c
+# a.out
+# test.txt
+# .vscode/
+# .DS_Store

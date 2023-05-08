@@ -6,7 +6,7 @@
 #    By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/09 17:35:46 by ncasteln          #+#    #+#              #
-#    Updated: 2023/05/07 13:41:34 by ncasteln         ###   ########.fr        #
+#    Updated: 2023/05/08 09:41:57 by ncasteln         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CFLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	make -C ./libft
+	$(MAKE) -C ./libft
 	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJS)
 
