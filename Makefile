@@ -6,38 +6,55 @@
 #    By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/09 17:35:46 by ncasteln          #+#    #+#              #
-#    Updated: 2023/05/08 12:37:54 by ncasteln         ###   ########.fr        #
+#    Updated: 2023/07/03 12:58:51 by ncasteln         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-LIBFT = ./libft/libft.a
+
+CFLAGS = -Wall -Werror -Wextra
+
+LIBFT = libft.a
+
 SRC = ft_printf.c \
 	print_char.c \
 	print_digits.c \
 	print_hex.c \
 	get_digit_len.c
-OBJS = $(SRC:.c=.o)
-CFLAGS = -Wall -Werror -Wextra
+VPATH = ./src/
+
+OBJS = $(addprefix $(OBJS_DIR), $(SRC:.c=.o))
+OBJS_DIR = ./objs/
+
+INCLUDE = -I ./include -I ../libft/include/
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(MAKE) -C ./libft
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
+	@ar rcs $(NAME) $(OBJS) ../libft/$(LIBFT)
+	@echo "$(GREEN)$(NAME) successfully created!"
 
-%.o: %.c
-	cc -c $(CFLAGS) -o $@ $^
+$(LIBFT):
+	@$(MAKE) -C ../libft/
+
+$(OBJS_DIR)%.o: %.c
+	@mkdir -p $(OBJS_DIR)
+	@cc $(CFLAGS) -c $< -o $@ $(INCLUDE)
 
 clean:
-	$(MAKE) clean -C ./libft
-	rm -f $(OBJS)
+	@rm -rf $(OBJS_DIR)
+	@echo "$(GREEN)$(NAME) objs successfully removed!"
 
 fclean: clean
-	$(MAKE) fclean -C ./libft
-	rm -f $(NAME)
+	@$(MAKE) fclean -C ../libft/
+	@rm -f $(NAME)
+	@echo "$(GREEN)$(NAME) successfully removed!"
 
 re: fclean all
 
-.PHONY: all clean fclean re
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+RED = \033[0;31m
+NC = \033[0m
+
+.PHONY: all, clean, fclean, re

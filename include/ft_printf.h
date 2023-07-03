@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 11:30:25 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/05/08 10:44:08 by ncasteln         ###   ########.fr       */
+/*   Created: 2023/04/09 18:13:38 by ncasteln          #+#    #+#             */
+/*   Updated: 2023/07/03 09:15:09 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include "libft.h"
+# include <stdarg.h>
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n == -2147483648)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		ft_putnbr_fd(147483648, fd);
-	}
-	else
-	{
-		if (n < 0)
-		{
-			ft_putchar_fd('-', fd);
-			n = n * -1;
-		}
-		if (n >= 10)
-		{
-			ft_putnbr_fd(n / 10, fd);
-			n = n % 10;
-		}
-		if (n < 10)
-			ft_putchar_fd(n + 48, fd);
-	}
-}
+int	ft_printf(const char *s, ...);
+int	get_digit_len(long n);
+int	print_c(char type, va_list ap);
+int	print_s(va_list ap);
+int	print_di(va_list ap);
+int	print_u(va_list ap);
+int	print_x(char type, va_list ap);
+int	print_p(va_list ap);
+
+#endif
