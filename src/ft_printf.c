@@ -6,7 +6,7 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 09:31:04 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/07/03 08:48:45 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/07/04 08:48:19 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_printf(const char *s, ...)
 	{
 		if (*s != '%')
 		{
-			ft_putchar_fd(*(s++), 1);
+			write(1, s++, 1);
 			n_printed++;
 		}
 		else
