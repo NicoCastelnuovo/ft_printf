@@ -30,4 +30,4 @@ In adapting the sorting algorithm for this project, I have chosen to implement t
 `#include "ft_printf.h`
 
 4. Compile your executable:
-`cc -c <your_file_with_main.c> ./ft_printf/libftprintf.a -I ./ft_printf/include/ -o <custom_name>`
+`cc <your_main.c> ./ft_printf/libftprintf.a -I ./ft_printf/include/ -o <custom_name>`

@@ -6,7 +6,7 @@
 #    By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/09 17:35:46 by ncasteln          #+#    #+#              #
-#    Updated: 2023/07/04 09:00:32 by ncasteln         ###   ########.fr        #
+#    Updated: 2023/07/05 09:30:30 by ncasteln         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,19 +31,19 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(GREEN)$(NAME) successfully created!"
+	@echo "$(GREEN)	$(NAME) successfully created!"
 
 $(OBJS_DIR)%.o: %.c
 	@mkdir -p $(OBJS_DIR)
-	@cc $(CFLAGS) -c $< -o $@ $(INCLUDE)
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE)
 
 clean:
 	@rm -rf $(OBJS_DIR)
-	@echo "$(GREEN)$(NAME) objs successfully removed!"
+	@echo "$(GREEN)	$(NAME) objs successfully removed!"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(GREEN)$(NAME) successfully removed!"
+	@echo "$(GREEN)	$(NAME) successfully removed!"
 
 re: fclean all
 
