@@ -34,6 +34,7 @@ make
 ```
 cc <your_main.c> ./ft_printf/libftprintf.a -I ./ft_printf/include/ -o <custom_name>
 ```
+5. Enjoy!
 
 **NOTE**
 
