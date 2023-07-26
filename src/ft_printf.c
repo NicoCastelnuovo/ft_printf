@@ -6,11 +6,12 @@
 /*   By: ncasteln <ncasteln@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 09:31:04 by ncasteln          #+#    #+#             */
-/*   Updated: 2023/07/04 08:48:19 by ncasteln         ###   ########.fr       */
+/*   Updated: 2023/07/26 10:47:44 by ncasteln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 static int	match_arg_type(const char *type, va_list ap)
 {
@@ -34,6 +35,7 @@ int	ft_printf(const char *s, ...)
 	va_list	ap;
 	int		n_printed;
 
+	printf("FTPRINTF is just began\n");
 	n_printed = 0;
 	va_start(ap, s);
 	while (*s)

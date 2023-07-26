@@ -35,7 +35,3 @@ make
 cc <your_main.c> ./ft_printf/libftprintf.a -I ./ft_printf/include/ -o <custom_name>
 ```
 5. Enjoy!
-
-**NOTE**
-
-ft_printf is part of `mylib`, a personal collection of libraries and functions used in the 42 Heilbronn projects. [Check it out!](https://github.com/NicoCastelnuovo/mylib)
